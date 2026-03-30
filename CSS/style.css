@@ -6,8 +6,9 @@
     --gris-fonce:#666;
     --gris-tres-clair:#F8F8F8;
     --gris-clair:#EEE;
+}
 
-* {
+ {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -162,4 +163,68 @@ section h2::after{
     font-size: 1.3rem;
 }
 
+.compétence table {
+  width: 80%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background-color: #FFF;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+}
 
+.compétence table th, .compétencetable td{
+    padding: 15px;
+}
+
+.compétence table thead {
+    background-color: var(--violet-doux);
+    color: #FFF;
+    text-transform: uppercase;
+}
+
+.compétence table tbody td {
+    border-bottom: var(--gris-clair);
+}
+
+.compétence table tbody tr::nth-child(even){
+    background-color: #fdfdfd;
+}
+
+.compétence table tbody  tr{
+    transition: background-color 0.3s ease;
+
+}
+
+.compétence table tbody tr::hover{
+    background-color: #f0f0f0;
+}
+
+.compétence table thead th{
+    text-align: left;
+}
+
+footer{
+    margin-top: 3rem;
+    background-color: var(--violet-doux);
+    padding:  2rem 0;
+    text-align: center;
+}  
+
+footer p{
+    color: white;
+    margin-bottom: 1.2rem;
+}
+
+footer a{
+    display: inline-block;
+    font-size: 1.6rem;
+    color: white;
+    margin: 0 10px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+footer a:hover {
+    color: var(--orange-vif);
+    transform: translateY(-3px);
+}
