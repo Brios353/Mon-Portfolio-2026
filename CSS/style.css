@@ -228,3 +228,245 @@ footer a:hover {
     color: var(--orange-vif);
     transform: translateY(-3px);
 }
+
+/* --- Styles additionnels pour la page Contact --- */
+
+.contact-container {
+    max-width: 900px;
+    margin: 5rem auto;
+    padding: 0 2rem;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contact-info h3 {
+    color: var(--violet-doux);
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    color: var(--gris-fonce);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-apps {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-apps a {
+    text-decoration: none;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    transition: opacity 0.3s;
+}
+
+.btn-whatsapp { background-color: #25D366; }
+.btn-telegram { background-color: #0088cc; }
+
+.social-apps a:hover {
+    opacity: 0.9;
+}
+
+/* Formulaire */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--gris-tres-fonce);
+}
+
+.form-group input {
+    padding: 12px;
+    border: 2px solid var(--gris-clair);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: var(--violet-doux);
+}
+
+.btn-submit {
+    background-color: var(--violet-doux);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: var(--violet-fonce);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Page Projets --- */
+
+main h1 {
+    text-align: center;
+    color: var(--violet-doux);
+    font-size: 2.5rem;
+    margin: 3rem 0;
+    position: relative;
+}
+
+/* Petit trait sous le titre "Mes Réalisations" */
+main h1::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: var(--violet-doux);
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+.grille-projets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    padding: 2rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grille-projets article {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.grille-projets article:hover {
+    transform: translateY(-10px);
+}
+
+.grille-projets figure {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.grille-projets figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.grille-projets article h3 {
+    padding: 1.5rem 1.5rem 0.5rem;
+    color: var(--violet-doux);
+    font-size: 1.4rem;
+}
+
+.grille-projets article p {
+    padding: 0 1.5rem;
+    color: var(--gris-fonce);
+    font-size: 0.95rem;
+    flex-grow: 1;
+}
+
+/* Tags / Badges */
+.tags {
+    padding: 1rem 1.5rem;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.tags span {
+    background-color: #f0efff;
+    color: var(--violet-doux);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border: 1px solid #e0dfff;
+}
+
+/* Liens en bas de carte */
+.liens-projet {
+    padding: 1.5rem;
+    border-top: 1px solid var(--gris-clair);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.liens-projet a, .liens-projet span {
+    text-decoration: none;
+    color: var(--gris-tres-fonce);
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s;
+}
+
+.liens-projet a:hover {
+    color: var(--violet-doux);
+}
+
+/* Icône "Bientôt" ou horloge */
+.liens-projet span {
+    color: var(--gris-fonce);
+    font-weight: 500;
+}
+
+/* Responsive pour tablettes */
+@media (max-width: 992px) {
+    .grille-projets {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Responsive pour mobiles */
+@media (max-width: 600px) {
+    .grille-projets {
+        grid-template-columns: 1fr;
+    }
+}
