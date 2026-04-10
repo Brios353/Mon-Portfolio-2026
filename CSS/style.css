@@ -471,82 +471,138 @@ main h1::after {
     }
 }
 
-/* --- Page Passions --- */
+/* --- Page Passions UNIQUE & PHANTASTIQUE --- */
 
-.passions-header {
-    text-align: center;
-    padding: 4rem 2rem 2rem;
-    max-width: 800px;
-    margin: 0 auto;
+.passions-unique {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 5rem;
+    background: #f8f8ff; /* Couleur de fond très douce */
 }
 
-.passions-header p {
-    color: var(--gris-fonce);
-    font-size: 1.2rem;
-    margin-top: 1rem;
-}
-
-.passions-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    padding: 3rem 5%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.passion-card {
-    background: white;
-    padding: 2.5rem 1.5rem;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-    border: 1px solid rgba(108, 99, 255, 0.1);
-    transition: all 0.3s ease;
-}
-
-.passion-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--violet-doux);
-    box-shadow: 0 15px 35px rgba(108, 99, 255, 0.1);
-}
-
-.passion-icon {
-    width: 70px;
-    height: 70px;
-    background-color: #f0efff;
-    color: var(--violet-doux);
+/* Bulles décoratives en arrière-plan */
+.blob-bg, .blob-bg-2 {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: var(--violet-doux);
+    filter: blur(80px);
+    opacity: 0.1;
     border-radius: 50%;
+    z-index: 0;
+}
+.blob-bg { top: -100px; left: -100px; }
+.blob-bg-2 { bottom: -100px; right: -100px; background: var(--orange-vif); }
+
+/* Titre Stylisé */
+.passions-hero {
+    text-align: center;
+    padding: 6rem 2rem;
+    z-index: 1;
+    position: relative;
+}
+
+.glitch-text {
+    font-size: 4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--violet-doux);
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+}
+
+/* Container de lignes */
+.passions-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.passion-row {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 4rem;
+    padding: 0 2rem;
+}
+
+.passion-row.reverse {
+    justify-content: flex-end;
+}
+
+/* Effet Glassmorphism */
+.glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.07);
+}
+
+.passion-content {
+    width: 60%;
+    padding: 3rem;
+    border-radius: 30px;
+    position: relative;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.passion-content:hover {
+    transform: scale(1.03);
+    background: rgba(108, 99, 255, 0.05);
+    border-color: var(--violet-doux);
+}
+
+.passion-number {
+    position: absolute;
+    top: -20px;
+    left: 30px;
+    font-size: 5rem;
+    font-weight: 900;
+    color: var(--violet-doux);
+    opacity: 0.1;
+}
+
+.passion-content h3 {
+    font-size: 2rem;
+    color: var(--violet-doux);
+    margin-bottom: 1rem;
+}
+
+.passion-content p {
+    font-size: 1.1rem;
+    color: var(--gris-fonce);
+    line-height: 1.8;
+}
+
+/* Icône flottante à droite de la carte */
+.passion-visual {
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 1.5rem;
-    font-size: 2rem;
-    transition: all 0.3s ease;
+    font-size: 2.5rem;
+    color: var(--violet-doux);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-.passion-card:hover .passion-icon {
-    background-color: var(--violet-doux);
-    color: white;
+.reverse .passion-visual {
+    left: -30px;
+    right: auto;
 }
 
-.passion-card h3 {
-    color: var(--gris-tres-fonce);
-    margin-bottom: 1rem;
-    font-size: 1.4rem;
-}
-
-.passion-card p {
-    color: var(--gris-fonce);
-    line-height: 1.7;
-    font-size: 1rem;
-}
-
-/* Adaptation Mobile */
+/* Responsive */
 @media (max-width: 768px) {
-    .passions-grid {
-        grid-template-columns: 1fr;
-    }
+    .glitch-text { font-size: 2.5rem; }
+    .passion-content { width: 100%; padding: 2rem; }
+    .passion-visual { display: none; }
 }
 
 /* --- Page Divertissement --- */
